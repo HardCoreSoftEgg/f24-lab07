@@ -9,4 +9,29 @@ package AndrewWebServices;
  */
 public class InMemoryDatabase /* should there be something here? */ {
     // Implement your fake database here
+    private String accountName;
+    private  int password;
+
+    public InMemoryDatabase() {
+        this.accountName = "Scotty";
+        this.password = 17214;
+
+    }
+
+    public boolean logIn(String accountName, int password) {
+        if (accountName.equals(this.accountName) && this.password == password) {
+            return true;
+        }
+        System.out.println("Login failed.");
+        return false;
+    }
+    public String getRecommendation(String accountName) {
+        if (accountName.equals(this.accountName)) {
+            return "Animal House";
+        }
+        else{
+            return "No recommendation";
+        }
+    }
 }
+
